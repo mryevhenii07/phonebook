@@ -57,7 +57,7 @@ const ContactList = () => {
             className={s.deleteBtn}
             onClick={() => dispatch(contactsOperations.deleteContact(id))}
           >
-            {t('contactList.btn')}
+            DELETE
           </button>
         </Paper>
       ))}

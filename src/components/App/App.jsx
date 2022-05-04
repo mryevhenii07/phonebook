@@ -46,12 +46,12 @@ const App = () => {
           <ThemeSwitcher />
 
           <div className={s.contantWrap}>
-            <h1 className={s.title}>{t('app.title')}</h1>
+            <h1 className={s.title}>Phonebook</h1>
             <div className={s.wrap}>
               <ContactForm />
             </div>
             <h2 className={s.subtitle}>
-              {t('app.subtitle')}{' '}
+              Contacts:
               {filteredContacts.length !== 0 && `${filteredContacts.length}`}
             </h2>
             {contacts.length > 1 && <Filter />}

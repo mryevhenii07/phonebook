@@ -40,7 +40,7 @@ const ContactForm = () => {
 
     const isInContacts = contacts => contacts.name === name;
     if (contacts.some(isInContacts)) {
-      toast.warn(`${t('toast.isInContacts')}`, {
+      toast.warn(`${t('toast.isInContactsfff')}`, {
         theme: 'colored',
       });
       return;
@@ -60,7 +60,7 @@ const ContactForm = () => {
     <form className={s.contacsForm} onSubmit={onSubmit}>
       <label className={s.label}>
         <span className={theme === themes.light ? s.litghtTitle : s.darkTitle}>
-          {t('contactForm.name')}
+          Name:
         </span>
         <input
           className={
@@ -70,13 +70,13 @@ const ContactForm = () => {
           onChange={onChangeInput}
           value={name}
           name="name"
-          placeholder={t('contactForm.placeholderName')}
+          placeholder="Example: Peredrii Yevhenii"
           required
         />
       </label>
 
       <label className={s.label}>
-        <span className={s.title}>{t('contactForm.number')}</span>
+        <span className={s.title}>Number:</span>
         <input
           className={
             theme === themes.light ? s.lightTextField : s.darkTextField
@@ -87,13 +87,13 @@ const ContactForm = () => {
           name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-          placeholder={t('contactForm.placeholderNumber')}
+          placeholder="Example: +380683985358"
           required
         />
       </label>
 
       <button type="submit" className={s.addBtn}>
-        {t('contactForm.btn')}
+        Add contacts
       </button>
     </form>
   );

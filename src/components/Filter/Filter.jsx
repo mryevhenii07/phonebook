@@ -1,5 +1,5 @@
 import { useEffect, useRef, useContext } from 'react';
-import { useSelector, useDispatch } from 'react-redux'; 
+import { useSelector, useDispatch } from 'react-redux';
 import { contactsActions } from 'redux/contacts';
 import { ThemeContext, themes } from 'context/themeContext';
 import { useTranslation } from 'react-i18next';
@@ -13,12 +13,10 @@ const Filter = () => {
 
   const inputRef = useRef(null);
 
-  const { t } = useTranslation();
-
   useEffect(() => {
     inputRef.current.focus();
   }, []);
-  
+
   return (
     <div>
       <label className={s.label}>
@@ -27,7 +25,7 @@ const Filter = () => {
             theme === themes.light ? s.lightThemeTitle : s.darkThemeTitle
           }
         >
-          {t('filter.message')}
+          Find contacts by name
         </span>
         <input
           ref={inputRef}
@@ -37,8 +35,8 @@ const Filter = () => {
           type="text"
           name="filter"
           value={filter}
-          onChange={e => dispatch(contactsActions.changeFilter(e.target.value))}     
-          placeholder={t('filter.placeholder')}
+          onChange={e => dispatch(contactsActions.changeFilter(e.target.value))}
+          placeholder="Example Zhenya"
         />
       </label>
     </div>

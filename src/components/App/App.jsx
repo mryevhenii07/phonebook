@@ -12,7 +12,7 @@ import ContactList from 'components/ContactList/ContactList';
 import Filter from 'components/Filter/Filter';
 import Container from 'components/common/Container/Container';
 import ThemeSwitcher from 'components/common/ThemeSwitcher/ThemeSwitcher';
-import LanguageSwitcher from 'components/common/LanguageSwitcher/LanguageSwitcher';
+
 import { contactsSelectors } from 'redux/contacts';
 
 const THEME_STORAGE_KEY = 'theme';
@@ -39,9 +39,6 @@ const App = () => {
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <div className={theme === themes.light ? s.lightTheme : s.darkTheme}>
-        <div className={s.lanquagesWrapper}>
-          <LanguageSwitcher />
-        </div>
         <Container>
           <ThemeSwitcher />
 
